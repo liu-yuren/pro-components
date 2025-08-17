@@ -23,7 +23,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/liu-yuren/element-plus-pro-components' },
+      { icon: 'github', link: 'https://liu-yuren.github.io/pro-components/' },
     ],
 
     footer: {
