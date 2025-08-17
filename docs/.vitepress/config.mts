@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Element Plus Pro Components',
   description: 'Professional UI components for Element Plus',
-  base: '/',
+  base: '/pro-components/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
