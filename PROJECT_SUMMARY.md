@@ -98,6 +98,35 @@
 
 - **框架**: Vue 3 + TypeScript
 - **UI 库**: Element Plus
+- **文档**: VitePress
+- **包管理**: pnpm
+- **部署**: GitHub Pages + GitHub Actions
+
+## 部署
+
+本项目支持自动部署到 GitHub Pages：
+
+### 快速开始
+
+1. **推送代码到 GitHub**
+   ```bash
+   git add .
+   git commit -m "feat: add GitHub Pages deployment"
+   git push origin main
+   ```
+
+2. **启用 GitHub Pages**
+   - 进入仓库 Settings → Pages
+   - Source 选择 "GitHub Actions"
+
+3. **访问文档**
+   ```
+   https://[你的用户名].github.io/element-plus-pro-components/
+   ```
+
+### 详细配置
+
+查看 [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md) 了解完整的设置步骤。
 - **构建工具**: Rollup + Vite
 - **包管理**: pnpm
 - **样式**: SCSS
