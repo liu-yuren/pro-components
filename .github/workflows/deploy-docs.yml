@@ -26,10 +26,10 @@ jobs:
           node-version: 20 # node版本
 
       - name: Install dependencies # 安装依赖
-        run: npm install
+        run: pnpm install
 
       - name: Build with VitePress # 使用VitePress构建文档
-        run: npm run build:docs # 根据package.json的scripts对象修改
+        run: pnpm run build:docs # 根据package.json的scripts对象修改
 
       - name: Upload artifact # 上传构建产物
         uses: actions/upload-pages-artifact@v3
