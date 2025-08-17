@@ -1,0 +1,39 @@
+{
+  "name": "@element-plus/pro-components",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.13.0",
+  "author": "",
+  "license": "ISC",
+  "keywords": [
+    "element",
+    "element-plus",
+    "element-plus-pro",
+    "element-plus-pro-components",
+    "element-plus-pro-components-docs"
+  ],
+  "engines": {
+    "node": ">=20.10.0",
+    "pnpm": ">=9.12.0"
+  },
+  "scripts": {
+    "dev:docs": "pnpm -F @pro-components/docs run dev",
+    "build:docs": "pnpm -F @pro-components/docs run build",
+    "preview:docs": "pnpm -F @pro-components/docs run preview",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
+  },
+  "dependencies": {
+    "@pro-components/components": "workspace:*",
+    "@pro-components/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^5.2.1",
+    "eslint": "^9.33.0",
+    "eslint-plugin-format": "^1.0.1",
+    "typescript": "catalog:",
+    "unbuild": "catalog:",
+    "vue": "catalog:"
+  }
+}
