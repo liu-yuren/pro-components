@@ -14,16 +14,15 @@ jobs:
       - name: Checkout # 检出代码
         uses: actions/checkout@v4
 
-      - name: Install pnpm # 安装pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false # 不自动运行pnpm install
-
       - name: Setup Node # 设置Node.js环境
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version # 从文件读取node版本
-          cache: pnpm # 启用pnpm缓存
+
+      - name: Install pnpm # 安装pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false # 不自动运行pnpm install
 
       - name: Install dependencies # 安装依赖
         run: pnpm install
