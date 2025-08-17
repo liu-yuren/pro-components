@@ -25,6 +25,11 @@ jobs:
         with:
           node-version: 20 # node版本
 
+      - name: Install pnpm # 安装pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest # 使用最新版本的pnpm
+
       - name: Install dependencies # 安装依赖
         run: pnpm install
 
