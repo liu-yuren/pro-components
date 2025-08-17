@@ -1,60 +1,48 @@
-name: Deploy Documentation
+name: Deploy Docs # 部署文档
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches: [main] # 当推送到main分支时触发
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: read # 读取仓库内容权限
+  pages: write # 写入GitHub Pages权限
+  id-token: write # 写入ID令牌权限
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: pages # 并发组名称
+  cancel-in-progress: true # 取消正在进行的部署
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
+  build: # 构建任务
+    runs-on: ubuntu-latest # 在Ubuntu最新版本上运行
     steps:
-      - name: Checkout code
+      - name: Checkout # 检出代码
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node # 设置Node.js环境
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: pnpm
+          node-version: 20 # node版本
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10.13.0
+      - name: Install dependencies # 安装依赖
+        run: npm install
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Build with VitePress # 使用VitePress构建文档
+        run: npm run build:docs # 根据package.json的scripts对象修改
 
-      - name: Build documentation
-        run: pnpm build:docs
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
+      - name: Upload artifact # 上传构建产物
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          path: docs/.vitepress/dist # 构建输出目录
 
-  deploy:
+  deploy: # 部署任务
     environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-
+      name: github-pages # GitHub Pages环境
+      url: ${{ steps.deployment.outputs.page_url }} # 部署后的页面URL
+    needs: build # 依赖build任务完成
+    runs-on: windows-latest # 在Windows最新版本上运行
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages # 部署到GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
