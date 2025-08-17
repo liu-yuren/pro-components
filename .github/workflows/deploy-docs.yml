@@ -5,13 +5,7 @@ on:
     branches: [main] # 当推送到main分支时触发
 
 permissions:
-  contents: read # 读取仓库内容权限
-  pages: write # 写入GitHub Pages权限
-  id-token: write # 写入ID令牌权限
-
-concurrency:
-  group: pages # 并发组名称
-  cancel-in-progress: true # 取消正在进行的部署
+  contents: write # 写入仓库内容权限
 
 jobs:
   build: # 构建任务
@@ -36,18 +30,15 @@ jobs:
       - name: Build with VitePress # 使用VitePress构建文档
         run: pnpm run build:docs # 根据package.json的scripts对象修改
 
-      - name: Upload artifact # 上传构建产物
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./docs/.vitepress/dist # 构建输出目录
+      - name: Move build output to root # 将构建输出移动到根目录
+        run: |
+          cp -r docs/.vitepress/dist/* ./
+          rm -rf docs/.vitepress/dist
 
-  deploy: # 部署任务
-    environment:
-      name: github-pages # GitHub Pages环境
-      url: ${{ steps.deployment.outputs.page_url }} # 部署后的页面URL
-    needs: build # 依赖build任务完成
-    runs-on: windows-latest # 在Windows最新版本上运行
-    steps:
-      - name: Deploy to GitHub Pages # 部署到GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Commit and push to main # 提交并推送到main分支
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Deploy docs to GitHub Pages" || exit 0
+          git push origin main
