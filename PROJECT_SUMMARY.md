@@ -7,12 +7,14 @@
 ## 已完成的功能
 
 ### 1. 项目结构
+
 - ✅ 完整的 TypeScript 配置
 - ✅ Rollup 打包配置
 - ✅ Vite 开发配置
 - ✅ 项目依赖管理
 
 ### 2. 核心组件
+
 - ✅ **ProTable** - 高级表格组件
   - 支持搜索、排序、筛选、分页
   - 支持行选择、工具栏操作
@@ -45,6 +47,7 @@
   - ProTabs - 标签页组件
 
 ### 3. Hooks 工具
+
 - ✅ **useTable** - 表格状态管理
   - 搜索、排序、筛选逻辑
   - 分页管理
@@ -64,6 +67,7 @@
 - ✅ **useRequest** - 网络请求管理
 
 ### 4. 工具函数
+
 - ✅ **通用工具** (common.ts)
   - 深拷贝、防抖、节流
   - 日期格式化、文件大小格式化
@@ -83,12 +87,14 @@
   - 菜单路径生成
 
 ### 5. 类型定义
+
 - ✅ 完整的 TypeScript 类型定义
 - ✅ 组件 Props 类型
 - ✅ 事件类型
 - ✅ 工具函数类型
 
 ### 6. 开发环境
+
 - ✅ 开发服务器配置
 - ✅ 热重载支持
 - ✅ 示例页面
@@ -109,6 +115,7 @@
 ### 快速开始
 
 1. **推送代码到 GitHub**
+
    ```bash
    git add .
    git commit -m "feat: add GitHub Pages deployment"
@@ -127,6 +134,7 @@
 ### 详细配置
 
 查看 [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md) 了解完整的设置步骤。
+
 - **构建工具**: Rollup + Vite
 - **包管理**: pnpm
 - **样式**: SCSS
@@ -143,25 +151,28 @@
 ## 使用方式
 
 ### 安装
+
 ```bash
 pnpm add @element-plus/pro-components
 ```
 
 ### 完整引入
-```typescript
-import { createApp } from 'vue';
-import ElementPlus from 'element-plus';
-import ElementPlusPro from '@element-plus/pro-components';
-import '@element-plus/pro-components/dist/style.css';
 
-const app = createApp(App);
-app.use(ElementPlus);
-app.use(ElementPlusPro);
+```typescript
+import ElementPlusPro from '@element-plus/pro-components'
+import ElementPlus from 'element-plus'
+import { createApp } from 'vue'
+import '@element-plus/pro-components/dist/style.css'
+
+const app = createApp(App)
+app.use(ElementPlus)
+app.use(ElementPlusPro)
 ```
 
 ### 按需引入
+
 ```typescript
-import { ProTable, ProForm, ProLayout } from '@element-plus/pro-components';
+import { ProForm, ProLayout, ProTable } from '@element-plus/pro-components'
 ```
 
 ## 开发命令

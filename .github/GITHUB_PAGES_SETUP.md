@@ -54,15 +54,11 @@ https://[你的用户名].github.io/element-plus-pro-components/
 
 如果遇到 "Unable to locate executable file: pnpm" 错误：
 
-1. **使用备用工作流**：
-   - 重命名 `.github/workflows/deploy-docs-backup.yml` 为 `.github/workflows/deploy-docs.yml`
-   - 或者直接使用备用工作流
-
-2. **手动修复**：
+1. **手动修复**：
    - 确保 pnpm 设置步骤在 Node.js 设置之前
    - 检查 pnpm 版本是否正确
 
-3. **其他检查**：
+2. **其他检查**：
    - 检查 Node.js 版本 (需要 >= 20.10.0)
    - 检查 pnpm 版本 (需要 >= 9.12.0)
    - 查看 GitHub Actions 日志中的调试信息
