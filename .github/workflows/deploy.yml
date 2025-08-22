@@ -38,7 +38,10 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: docs/.vitepress/dist
-          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
+          git-config-name: liuyuren
+          git-config-email: 1540979440@qq.com
 
       # - name: Deploy 🚀
       #   uses: JamesIves/github-pages-deploy-action@v4
