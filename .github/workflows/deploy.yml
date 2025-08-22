@@ -10,6 +10,8 @@ on:
 
 permissions:
   contents: write # 允许写入内容    
+  pages: write # 允许部署到 GitHub Pages
+  id-token: write # 允许使用 OIDC
 
 jobs:
   build:
@@ -17,28 +19,54 @@ jobs:
     steps:
       - name: Checkout # 检出代码
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 获取完整历史记录
 
-      - name: Install pnpm
+      - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           run_install: false
 
-      - name: Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version 
           cache: 'pnpm'
 
-      - name: Install and Build
+      - name: Get pnpm store directory
+        shell: bash
         run: |
-          pnpm install
-          pnpm build:docs
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
         with:
-          # 静态文件的路径
-          folder: docs/.vitepress/dist
-          # 部署到 page 分支，因为 main 分支存放的一般是源码，而 page 分支则用来存放生成的静态文件
-          branch: page 
-          token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build documentation
+        run: pnpm build:docs
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
