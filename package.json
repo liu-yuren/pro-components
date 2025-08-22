@@ -21,6 +21,7 @@
     "dev:docs": "pnpm -F @pro-components/docs run dev",
     "build:docs": "pnpm -F @pro-components/docs run build",
     "preview:docs": "pnpm -F @pro-components/docs run preview",
+    "dev:playground": "pnpm -F @pro-components/playground run dev",
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
