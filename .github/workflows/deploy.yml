@@ -3,16 +3,17 @@ name: Deploy Docs # 部署文档
 on:
   # 手动运行工作流程（workflow_dispatch 事件触发器配置后可以在actions下手动运行工作流）
   workflow_dispatch:
-
-  # push:
-  #   branches: [main] # 当推送到main分支时触发
-
-# permissions:
-#   contents: write # 写入仓库内容权限
+  # 当推送到main分支时自动部署
+  push:
+    branches: [ main ]
 
 jobs:
   build: # 构建任务
     runs-on: ubuntu-latest # 在Ubuntu最新版本上运行
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
       - name: Checkout # 检出代码
         uses: actions/checkout@v4
@@ -31,8 +32,21 @@ jobs:
           node-version-file: .node-version # 从文件读取node版本
           cache: 'pnpm' # 缓存pnpm依赖
 
+      - name: Show Node version # 显示Node版本信息
+        run: node --version && pnpm --version
+
+      - name: Install dependencies # 安装依赖
+        run: pnpm install
+
       - name: Build # 打包静态文件
-        run: pnpm install && pnpm build:docs
+        run: pnpm build:docs
+
+      - name: Check build output # 检查构建输出
+        run: |
+          echo "Build output directory contents:"
+          ls -la docs/.vitepress/dist/
+          echo "Checking if index.html exists:"
+          test -f docs/.vitepress/dist/index.html && echo "✅ index.html found" || echo "❌ index.html not found"
 
       # 部署到GitHub Pages - 也就是将打包内容发布到GitHub Pages
       - name: Deploy
@@ -42,26 +56,7 @@ jobs:
         with:
           # 指定仓库：你要发布的仓库路径名
           repository-name: liu-yuren/pro-components
-          # 部署到 deploy-pages 分支，也就是部署后提交到那个分支
-          branch: main
+          # 部署到 gh-pages 分支，这是GitHub Pages的标准做法
+          branch: gh-pages
           # 填写打包好的目录名称路径，本项目配置在根目录
           folder: docs/.vitepress/dist
-
-
-      # - name: Move build output to root # 将构建输出移动到根目录
-      #   run: |
-      #     cp -r docs/.vitepress/dist/* ./
-      #     rm -rf docs/.vitepress/dist
-
-      # - name: Commit and push to main # 提交并推送到main分支
-      #   run: |
-      #     git config --global user.name "github-actions[bot]"
-      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      #     git add .
-      #     # 检查是否有文件变更，如果有才提交
-      #     if git diff --staged --quiet; then
-      #       echo "No changes to commit"
-      #     else
-      #       git commit -m "Deploy docs to GitHub Pages"
-      #     fi
-      #     git push origin main
