@@ -32,7 +32,7 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
-          pnpm build
+          pnpm build:docs
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
