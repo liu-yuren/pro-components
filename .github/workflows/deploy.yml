@@ -1,11 +1,14 @@
 name: Deploy Docs # 部署文档
 
 on:
-  push:
-    branches: [main] # 当推送到main分支时触发
+  # 手动运行工作流程（workflow_dispatch 事件触发器配置后可以在actions下手动运行工作流）
+  workflow_dispatch:
 
-permissions:
-  contents: write # 写入仓库内容权限
+  # push:
+  #   branches: [main] # 当推送到main分支时触发
+
+# permissions:
+#   contents: write # 写入仓库内容权限
 
 jobs:
   build: # 构建任务
@@ -13,19 +16,37 @@ jobs:
     steps:
       - name: Checkout # 检出代码
         uses: actions/checkout@v4
-
-      # - name: Setup Node # 设置Node.js环境
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version-file: .node-version # 从文件读取node版本
+        with:
+          # 根据网上资料查询此处可以设置为 false。https://github.com/actions/checkout
+          persist-credentials: false
 
       - name: Install pnpm # 安装pnpm
         uses: pnpm/action-setup@v4
         with:
           run_install: false # 不自动运行pnpm install
 
+      - name: Setup Node # 设置Node.js环境
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version # 从文件读取node版本
+          cache: 'pnpm' # 缓存pnpm依赖
+
       - name: Build # 打包静态文件
         run: pnpm install && pnpm build:docs
+
+      # 部署到GitHub Pages - 也就是将打包内容发布到GitHub Pages
+      - name: Deploy
+        # 使用别人写好的 actions去部署（将打包文件部署到指定分支上）
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        # 自定义环境变量
+        with:
+          # 指定仓库：你要发布的仓库路径名
+          repository-name: liu-yuren/pro-components
+          # 部署到 deploy-pages 分支，也就是部署后提交到那个分支
+          branch: main
+          # 填写打包好的目录名称路径，本项目配置在根目录
+          folder: docs/.vitepress/dist
+
 
       # - name: Move build output to root # 将构建输出移动到根目录
       #   run: |
