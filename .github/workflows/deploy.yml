@@ -33,7 +33,7 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{secrets.VITE_TOKEN}}
+          token: ${{ secrets.GITHUB_TOKEN }}
           folder: docs/.vitepress/dist
           git-config-name: liuyuren
           git-config-email: 1540979440@qq.com
