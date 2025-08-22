@@ -228,3 +228,7 @@ src/
 ## 总结
 
 本项目已经建立了一个完整的 Vue3 + Element Plus 高级组件库的基础框架，包含了企业级应用开发所需的核心组件和工具。项目结构清晰，代码质量高，具有良好的可扩展性和维护性。可以作为企业级前端项目的基础组件库使用。
+pnpm add turbo -Dw
+
+pnpm add @changesets/cli -Dw
+npx changeset init
