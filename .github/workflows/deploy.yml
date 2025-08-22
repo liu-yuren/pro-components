@@ -12,7 +12,7 @@ permissions:
   contents: write # 允许写入内容    
 
 jobs:
-  build: # 构建任务
+  build:
     runs-on: ubuntu-latest # 在Ubuntu最新版本上运行
     steps:
       - name: Checkout # 检出代码
@@ -37,16 +37,8 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          # 静态文件的路径
           folder: docs/.vitepress/dist
-          branch: gh-pages
+          # 部署到 page 分支，因为 main 分支存放的一般是源码，而 page 分支则用来存放生成的静态文件
+          branch: page 
           token: ${{ secrets.GITHUB_TOKEN }}
-          git-config-name: liuyuren
-          git-config-email: 1540979440@qq.com
-
-      # - name: Deploy 🚀
-      #   uses: JamesIves/github-pages-deploy-action@v4
-        # with:
-        #   token: ${{ secrets.GITHUB_TOKEN }}
-        #   folder: docs/.vitepress/dist
-        #   git-config-name: liuyuren
-        #   git-config-email: 1540979440@qq.com
