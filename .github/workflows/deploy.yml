@@ -19,13 +19,15 @@ jobs:
     steps:
       - name: Checkout # 检出代码
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false # 禁用凭据持久化，避免泄露令牌
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           run_install: false
 
-      - name: Setup Node.js
+      - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version 
