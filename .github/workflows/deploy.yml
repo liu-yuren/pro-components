@@ -18,25 +18,32 @@ jobs:
       - name: Checkout # 检出代码
         uses: actions/checkout@v4
 
-      - name: Install pnpm # 安装pnpm
+      - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          run_install: false # 不自动运行pnpm install
+          run_install: false
 
-      - name: Install Node.js # 设置Node.js环境
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: .node-version # 从文件读取node版本
-          cache: 'pnpm' # 缓存pnpm依赖
+          node-version-file: .node-version 
+          cache: 'pnpm'
 
-      - name: Build # 打包静态文件
-        run: pnpm install && pnpm build:docs
-
+      - name: Install and Build
+        run: |
+          pnpm install
+          pnpm build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           folder: docs/.vitepress/dist
-          git-config-name: liuyuren
-          git-config-email: 1540979440@qq.com
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+
+      # - name: Deploy 🚀
+      #   uses: JamesIves/github-pages-deploy-action@v4
+        # with:
+        #   token: ${{ secrets.GITHUB_TOKEN }}
+        #   folder: docs/.vitepress/dist
+        #   git-config-name: liuyuren
+        #   git-config-email: 1540979440@qq.com
