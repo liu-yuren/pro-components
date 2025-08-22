@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Runtime API Examples | Element Plus Pro Components</title>
+    <meta name="description" content="Professional UI components for Element Plus">
+    <meta name="generator" content="VitePress v1.6.4">
+    <link rel="preload stylesheet" href="/pro-components/assets/style.uqc-_TXJ.css" as="style">
+    <link rel="preload stylesheet" href="/pro-components/vp-icons.css" as="style">
+    
+    <script type="module" src="/pro-components/assets/app.D4lvWkNW.js"></script>
+    <link rel="preload" href="/pro-components/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="modulepreload" href="/pro-components/assets/chunks/theme.DeoBZ8DB.js">
+    <link rel="modulepreload" href="/pro-components/assets/chunks/framework.BbJT5GU_.js">
+    <link rel="modulepreload" href="/pro-components/assets/api-examples.md.dRqPGWHl.lean.js">
+    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+  </head>
+  <body>
+    <div id="app"><div class="Layout" data-v-60e78e62><!--[--><!--]--><!--[--><span tabindex="-1" data-v-cc83f850></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-cc83f850>Skip to content</a><!--]--><!----><header class="VPNav" data-v-60e78e62 data-v-aa0e71ee><div class="VPNavBar" data-v-aa0e71ee data-v-5440fa46><div class="wrapper" data-v-5440fa46><div class="container" data-v-5440fa46><div class="title" data-v-5440fa46><div class="VPNavBarTitle has-sidebar" data-v-5440fa46 data-v-fa9451d8><a class="title" href="/pro-components/" data-v-fa9451d8><!--[--><!--]--><!----><span data-v-fa9451d8>Element Plus Pro Components</span><!--[--><!--]--></a></div></div><div class="content" data-v-5440fa46><div class="content-body" data-v-5440fa46><!--[--><!--]--><div class="VPNavBarSearch search" data-v-5440fa46><!----></div><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-5440fa46 data-v-f67bbc7a><span id="main-nav-aria-label" class="visually-hidden" data-v-f67bbc7a> Main Navigation </span><!--[--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/pro-components/" tabindex="0" data-v-f67bbc7a data-v-82c37a70><!--[--><span data-v-82c37a70>Home</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/pro-components/markdown-examples.html" tabindex="0" data-v-f67bbc7a data-v-82c37a70><!--[--><span data-v-82c37a70>Examples</span><!--]--></a><!--]--><!--]--></nav><!----><div class="VPNavBarAppearance appearance" data-v-5440fa46 data-v-cede73cd><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-cede73cd data-v-751c79d8 data-v-b57ea653><span class="check" data-v-b57ea653><span class="icon" data-v-b57ea653><!--[--><span class="vpi-sun sun" data-v-751c79d8></span><span class="vpi-moon moon" data-v-751c79d8></span><!--]--></span></span></button></div><div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-5440fa46 data-v-71e4e22a data-v-af16e194><!--[--><a class="VPSocialLink no-icon" href="https://liu-yuren.github.io/pro-components/" aria-label="github" target="_blank" rel="noopener" data-v-af16e194 data-v-9b6312b2><span class="vpi-social-github"></span></a><!--]--></div><div class="VPFlyout VPNavBarExtra extra" data-v-5440fa46 data-v-a1dcf964 data-v-b4b373d5><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-b4b373d5><span class="vpi-more-horizontal icon" data-v-b4b373d5></span></button><div class="menu" data-v-b4b373d5><div class="VPMenu" data-v-b4b373d5 data-v-5543d7e5><!----><!--[--><!--[--><!----><div class="group" data-v-a1dcf964><div class="item appearance" data-v-a1dcf964><p class="label" data-v-a1dcf964>Appearance</p><div class="appearance-action" data-v-a1dcf964><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-a1dcf964 data-v-751c79d8 data-v-b57ea653><span class="check" data-v-b57ea653><span class="icon" data-v-b57ea653><!--[--><span class="vpi-sun sun" data-v-751c79d8></span><span class="vpi-moon moon" data-v-751c79d8></span><!--]--></span></span></button></div></div></div><div class="group" data-v-a1dcf964><div class="item social-links" data-v-a1dcf964><div class="VPSocialLinks social-links-list" data-v-a1dcf964 data-v-af16e194><!--[--><a class="VPSocialLink no-icon" href="https://liu-yuren.github.io/pro-components/" aria-label="github" target="_blank" rel="noopener" data-v-af16e194 data-v-9b6312b2><span class="vpi-social-github"></span></a><!--]--></div></div></div><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-5440fa46 data-v-25c10fa9><span class="container" data-v-25c10fa9><span class="top" data-v-25c10fa9></span><span class="middle" data-v-25c10fa9></span><span class="bottom" data-v-25c10fa9></span></span></button></div></div></div></div><div class="divider" data-v-5440fa46><div class="divider-line" data-v-5440fa46></div></div></div><!----></header><div class="VPLocalNav has-sidebar empty" data-v-60e78e62 data-v-ccda6d14><div class="container" data-v-ccda6d14><button class="menu" aria-expanded="false" aria-controls="VPSidebarNav" data-v-ccda6d14><span class="vpi-align-left menu-icon" data-v-ccda6d14></span><span class="menu-text" data-v-ccda6d14>Menu</span></button><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-v-ccda6d14 data-v-77d83279><button data-v-77d83279>Return to top</button><!----></div></div></div><aside class="VPSidebar" data-v-60e78e62 data-v-16ae73a3><div class="curtain" data-v-16ae73a3></div><nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1" data-v-16ae73a3><span class="visually-hidden" id="sidebar-aria-label" data-v-16ae73a3> Sidebar Navigation </span><!--[--><!--]--><!--[--><div class="no-transition group" data-v-925927c2><section class="VPSidebarItem level-0 has-active" data-v-925927c2 data-v-585bb03f><div class="item" role="button" tabindex="0" data-v-585bb03f><div class="indicator" data-v-585bb03f></div><h2 class="text" data-v-585bb03f>Examples</h2><!----></div><div class="items" data-v-585bb03f><!--[--><div class="VPSidebarItem level-1 is-link" data-v-585bb03f data-v-585bb03f><div class="item" data-v-585bb03f><div class="indicator" data-v-585bb03f></div><a class="VPLink link link" href="/pro-components/markdown-examples.html" data-v-585bb03f><!--[--><p class="text" data-v-585bb03f>Markdown Examples</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-585bb03f data-v-585bb03f><div class="item" data-v-585bb03f><div class="indicator" data-v-585bb03f></div><a class="VPLink link link" href="/pro-components/api-examples.html" data-v-585bb03f><!--[--><p class="text" data-v-585bb03f>Runtime API Examples</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><!--]--><!--[--><!--]--></nav></aside><div class="VPContent has-sidebar" id="VPContent" data-v-60e78e62 data-v-afefd489><div class="VPDoc has-sidebar has-aside" data-v-afefd489 data-v-0b1ff8a1><!--[--><!--]--><div class="container" data-v-0b1ff8a1><div class="aside" data-v-0b1ff8a1><div class="aside-curtain" data-v-0b1ff8a1></div><div class="aside-container" data-v-0b1ff8a1><div class="aside-content" data-v-0b1ff8a1><div class="VPDocAside" data-v-0b1ff8a1 data-v-8980f0bb><!--[--><!--]--><!--[--><!--]--><nav aria-labelledby="doc-outline-aria-label" class="VPDocAsideOutline" data-v-8980f0bb data-v-842c3228><div class="content" data-v-842c3228><div class="outline-marker" data-v-842c3228></div><div aria-level="2" class="outline-title" id="doc-outline-aria-label" role="heading" data-v-842c3228>On this page</div><ul class="VPDocOutlineItem root" data-v-842c3228 data-v-2e3d59cf><!--[--><!--]--></ul></div></nav><!--[--><!--]--><div class="spacer" data-v-8980f0bb></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-0b1ff8a1><div class="content-container" data-v-0b1ff8a1><!--[--><!--]--><main class="main" data-v-0b1ff8a1><div style="position:relative;" class="vp-doc _pro-components_api-examples" data-v-0b1ff8a1><div><h1 id="runtime-api-examples" tabindex="-1">Runtime API Examples <a class="header-anchor" href="#runtime-api-examples" aria-label="Permalink to &quot;Runtime API Examples&quot;">​</a></h1><p>This page demonstrates usage of some of the runtime APIs provided by VitePress.</p><p>The main <code>useData()</code> API can be used to access site, theme, and page data for the current page. It works in both <code>.md</code> and <code>.vue</code> files:</p><div class="language-md vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">md</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;script setup&gt;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">import { useData } from &#39;vitepress&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">const { theme, page, frontmatter } = useData()</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;/script&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## Results</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">### Theme Data</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;pre&gt;{{ theme }}&lt;/pre&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">### Page Data</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;pre&gt;{{ page }}&lt;/pre&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">### Page Frontmatter</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;pre&gt;{{ frontmatter }}&lt;/pre&gt;</span></span></code></pre></div><h2 id="results" tabindex="-1">Results <a class="header-anchor" href="#results" aria-label="Permalink to &quot;Results&quot;">​</a></h2><h3 id="theme-data" tabindex="-1">Theme Data <a class="header-anchor" href="#theme-data" aria-label="Permalink to &quot;Theme Data&quot;">​</a></h3><pre>{
+  &quot;nav&quot;: [
+    {
+      &quot;text&quot;: &quot;Home&quot;,
+      &quot;link&quot;: &quot;/&quot;
+    },
+    {
+      &quot;text&quot;: &quot;Examples&quot;,
+      &quot;link&quot;: &quot;/markdown-examples&quot;
+    }
+  ],
+  &quot;sidebar&quot;: [
+    {
+      &quot;text&quot;: &quot;Examples&quot;,
+      &quot;items&quot;: [
+        {
+          &quot;text&quot;: &quot;Markdown Examples&quot;,
+          &quot;link&quot;: &quot;/markdown-examples&quot;
+        },
+        {
+          &quot;text&quot;: &quot;Runtime API Examples&quot;,
+          &quot;link&quot;: &quot;/api-examples&quot;
+        }
+      ]
+    }
+  ],
+  &quot;socialLinks&quot;: [
+    {
+      &quot;icon&quot;: &quot;github&quot;,
+      &quot;link&quot;: &quot;https://liu-yuren.github.io/pro-components/&quot;
+    }
+  ],
+  &quot;footer&quot;: {
+    &quot;message&quot;: &quot;Released under the MIT License.&quot;,
+    &quot;copyright&quot;: &quot;Copyright © 2024-present Element Plus Pro Components&quot;
+  }
+}</pre><h3 id="page-data" tabindex="-1">Page Data <a class="header-anchor" href="#page-data" aria-label="Permalink to &quot;Page Data&quot;">​</a></h3><pre>{
+  &quot;title&quot;: &quot;Runtime API Examples&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;frontmatter&quot;: {
+    &quot;outline&quot;: &quot;deep&quot;
+  },
+  &quot;headers&quot;: [],
+  &quot;relativePath&quot;: &quot;api-examples.md&quot;,
+  &quot;filePath&quot;: &quot;api-examples.md&quot;
+}</pre><h3 id="page-frontmatter" tabindex="-1">Page Frontmatter <a class="header-anchor" href="#page-frontmatter" aria-label="Permalink to &quot;Page Frontmatter&quot;">​</a></h3><pre>{
+  &quot;outline&quot;: &quot;deep&quot;
+}</pre><h2 id="more" tabindex="-1">More <a class="header-anchor" href="#more" aria-label="Permalink to &quot;More&quot;">​</a></h2><p>Check out the documentation for the <a href="https://vitepress.dev/reference/runtime-api#usedata" target="_blank" rel="noreferrer">full list of runtime APIs</a>.</p></div></div></main><footer class="VPDocFooter" data-v-0b1ff8a1 data-v-ddc7e354><!--[--><!--]--><!----><nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-ddc7e354><span class="visually-hidden" id="doc-footer-aria-label" data-v-ddc7e354>Pager</span><div class="pager" data-v-ddc7e354><a class="VPLink link pager-link prev" href="/pro-components/markdown-examples.html" data-v-ddc7e354><!--[--><span class="desc" data-v-ddc7e354>Previous page</span><span class="title" data-v-ddc7e354>Markdown Examples</span><!--]--></a></div><div class="pager" data-v-ddc7e354><!----></div></nav></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><footer class="VPFooter has-sidebar" data-v-60e78e62 data-v-3474800b><div class="container" data-v-3474800b><p class="message" data-v-3474800b>Released under the MIT License.</p><p class="copyright" data-v-3474800b>Copyright © 2024-present Element Plus Pro Components</p></div></footer><!--[--><!--]--></div></div>
+    <script>window.__VP_HASH_MAP__=JSON.parse("{\"api-examples.md\":\"dRqPGWHl\",\"index.md\":\"NblqM13u\",\"markdown-examples.md\":\"BJcWHxlv\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"en-US\",\"dir\":\"ltr\",\"title\":\"Element Plus Pro Components\",\"description\":\"Professional UI components for Element Plus\",\"base\":\"/pro-components/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"nav\":[{\"text\":\"Home\",\"link\":\"/\"},{\"text\":\"Examples\",\"link\":\"/markdown-examples\"}],\"sidebar\":[{\"text\":\"Examples\",\"items\":[{\"text\":\"Markdown Examples\",\"link\":\"/markdown-examples\"},{\"text\":\"Runtime API Examples\",\"link\":\"/api-examples\"}]}],\"socialLinks\":[{\"icon\":\"github\",\"link\":\"https://liu-yuren.github.io/pro-components/\"}],\"footer\":{\"message\":\"Released under the MIT License.\",\"copyright\":\"Copyright © 2024-present Element Plus Pro Components\"}},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":false}");</script>
+    
+  </body>
+</html>
