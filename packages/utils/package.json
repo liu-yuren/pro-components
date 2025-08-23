@@ -2,19 +2,31 @@
   "name": "@pro-components/utils",
   "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@10.13.0",
-  "description": "",
-  "author": "",
-  "license": "MIT",
+  "description": "utility functions for pro-components",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "development": "./src/index.ts",
-      "default": "./src/index.ts",
-      "#default": "./dist/index.mjs"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     }
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "pnpm unbuild"
+    "build": "unbuild",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "@vue/shared": "catalog:",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@vue/shared": "catalog:",
+    "unbuild": "catalog:",
+    "vue": "catalog:"
   }
 }

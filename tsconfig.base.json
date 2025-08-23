@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "jsx": "preserve",
+    "lib": ["ES2018", "DOM", "DOM.Iterable"],
+    "baseUrl": ".",
+    "rootDir": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "paths": {
+      "@element-plus/components": ["packages/components"],
+      "@element-plus/components/*": ["packages/components/*"],
+      "@element-plus/utils": ["packages/utils"],
+      "@element-plus/utils/*": ["packages/utils/*"]
+      // "@element-plus/hooks": ["packages/hooks"],
+      // "@element-plus/directives": ["packages/directives"],
+      // "@element-plus/constants": ["packages/constants"],
+      // "@element-plus/locale": ["packages/locale"],
+      // "@element-plus/locale/*": ["packages/locale/*"],
+      // "element-plus": ["packages/element-plus"]
+    },
+    "resolveJsonModule": true,
+    "types": [],
+    "allowJs": false,
+    "strict": true,
+    "noUnusedLocals": true,
+    "outDir": "dist",
+    "removeComments": false,
+    "sourceMap": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "preserveSymlinks": true
+  }
+}
