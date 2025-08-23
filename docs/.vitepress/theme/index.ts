@@ -11,21 +11,6 @@ export default {
   ...DefaultTheme,
   enhanceApp(ctx) {
     ctx.app.component('demo-preview', ElementPlusContainer)
-
-    // Redirect function shorthands
-    // For example `/useDark` to `/core/useDark`
-    ctx.router.onBeforeRouteChange = (to: string) => {
-      const name = to.replace(/\.html$/i, '').replace(/^\//, '')
-      if (name.includes('/'))
-        return
-      const fn = functions.find(f => f.name === name)
-      if (!fn)
-        return
-
-      setTimeout(() => ctx.router.go(`/${fn.package}/${fn.name}/`), 0)
-      // Abort the navigation
-      return false
-    }
     // app.use(proComponents as any)
   },
 }
