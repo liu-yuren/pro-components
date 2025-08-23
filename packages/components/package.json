@@ -1,35 +1,13 @@
 {
   "name": "@pro-components/components",
-  "type": "module",
   "version": "1.0.0",
-  "description": "all components are settled here",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "packageManager": "pnpm@10.13.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
   "scripts": {
-    "build": "unbuild",
-    "clean": "rm -rf dist"
-  },
-  "peerDependencies": {
-    "element-plus": "catalog:",
-    "vue": "catalog:"
-  },
-  "dependencies": {
-    "@pro-components/utils": "workspace:*"
-  },
-  "devDependencies": {
-    "element-plus": "catalog:",
-    "unbuild": "catalog:",
-    "vue": "catalog:"
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

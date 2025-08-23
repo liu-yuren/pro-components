@@ -22,7 +22,7 @@
     "build:docs": "pnpm -F @pro-components/docs run build",
     "preview:docs": "pnpm -F @pro-components/docs run preview",
     "dev:playground": "pnpm -F @pro-components/playground run dev",
-    "build": "pnpm -r build",
+    "build": "vite build",
     "build:components": "pnpm -F @pro-components/components build",
     "build:utils": "pnpm -F @pro-components/utils build",
     "clean": "pnpm -r clean",
@@ -41,12 +41,15 @@
   "devDependencies": {
     "@antfu/eslint-config": "^5.2.1",
     "@changesets/cli": "^2.29.6",
+    "@types/node": "^24.3.0",
+    "@vitejs/plugin-vue": "^6.0.1",
     "element-plus": "catalog:",
     "eslint": "^9.33.0",
     "eslint-plugin-format": "^1.0.1",
     "turbo": "^2.5.6",
     "typescript": "catalog:",
     "unbuild": "catalog:",
+    "vite": "catalog:",
     "vue": "catalog:"
   }
 }

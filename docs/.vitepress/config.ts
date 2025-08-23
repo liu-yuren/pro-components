@@ -5,14 +5,14 @@ import {
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'Element Plus Pro Components',
+  title: 'ProComponents',
   description: 'Professional UI components for Element Plus',
   base: '/pro-components/',
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
       { text: '文档', link: '/guide/quickstart' },
-      { text: '组件', link: '/components/form' },
+      { text: '组件', link: '/components/' },
       { text: 'Changelog', link: '/changelog' },
     ],
 
@@ -28,9 +28,25 @@ export default defineConfig({
       ],
       '/components/': [
         {
+          text: '架构设计',
+          items: [
+            { text: 'Components - 组价设计', link: '/components/' },
+            { text: 'Schema - 通用配置', link: '/components/schema' },
+          ],
+        },
+        {
           text: '数据录入',
           items: [
-            { text: 'Schema Form - JSON 表单', link: '/components/form' },
+            { text: 'Schema Form - JSON 表单', link: '/components/schema-form' },
+            { text: 'DialogForm - 弹窗表单', link: '/components/dialog-form' },
+            { text: 'SearchForm - 搜索表单', link: '/components/search-form' },
+            { text: 'StepsForm - 分布表单', link: '/components/steps-form' },
+          ],
+        },
+        {
+          text: '数据展示',
+          items: [
+            { text: 'ProTable - 高级表格', link: '/components/table' },
           ],
         },
       ],

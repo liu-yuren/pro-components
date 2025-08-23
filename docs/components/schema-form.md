@@ -1,12 +1,12 @@
-# Form 表单
+# Schema Form - JSON 表单
 
-Form 是一个基础的表单组件，提供了完整的表单功能。
+Schema Form 是一个基于 JSON Schema 的声明式表单组件，可以通过配置快速生成复杂的表单。
 
 ## 基础用法
 
 ```vue
 <script setup>
-import { Form } from '@pro-components/components'
+import { SchemaForm } from '@pro-components/components'
 
 const schema = {
   type: 'object',
@@ -30,7 +30,7 @@ function handleSubmit(values) {
 </script>
 
 <template>
-  <Form :schema="schema" @submit="handleSubmit" />
+  <SchemaForm :schema="schema" @submit="handleSubmit" />
 </template>
 ```
 

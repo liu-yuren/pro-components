@@ -1,10 +1,29 @@
 {
-  "references": [
-    { "path": "./tsconfig.web.json" }
-    // { "path": "./tsconfig.play.json" },
-    // { "path": "./tsconfig.node.json" },
-    // { "path": "./tsconfig.vite-config.json" },
-    // { "path": "./tsconfig.vitest.json" }
-  ],
-  "files": []
+  "compilerOptions": {
+    "target": "es6", // 遵循es6版本
+    "jsx": "preserve", // jsx 不转
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "noLib": false, // 不处理类库
+    "experimentalDecorators": true, // 装饰器语法
+    "module": "ESNext", // 打包模块类型ESNext
+    "moduleResolution": "node", // 按照node模块来解析
+    "resolveJsonModule": true, // 解析json模块
+    "strict": true, // 是否启动严格模式
+    "noImplicitAny": false, // 支持类型不标注可以默认any
+    "declaration": false, // 默认不要声明文件
+    "removeComments": true, // 删除注释
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true, // 允许没有导出的模块中导入
+    "esModuleInterop": true, // 支持es6, commonjs模块
+    "forceConsistentCasingInFileNames": true, // 强制区分大小写
+    "skipLibCheck": true // 跳过类库检测
+  },
+  "exclude": [ // 排除掉哪些类库
+    "node_modules",
+    "**/_tests_",
+    "dist/**"
+  ]
 }

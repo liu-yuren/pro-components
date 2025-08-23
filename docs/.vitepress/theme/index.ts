@@ -2,6 +2,7 @@ import type { App } from 'vue'
 // import * as proComponents from '@pro-components/components'
 import { ElementPlusContainer } from '@vitepress-demo-preview/component'
 import DefaultTheme from 'vitepress/theme'
+import './custom.css'
 
 import '@vitepress-demo-preview/component/dist/style.css'
 
