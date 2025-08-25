@@ -18,13 +18,11 @@
     "pnpm": ">=9.12.0"
   },
   "scripts": {
-    "dev:docs": "pnpm -F @pro-components/docs run dev",
-    "build:docs": "pnpm -F @pro-components/docs run build",
-    "preview:docs": "pnpm -F @pro-components/docs run preview",
-    "dev:playground": "pnpm -F @pro-components/playground run dev",
     "build": "vite build",
-    "build:components": "pnpm -F @pro-components/components build",
-    "build:utils": "pnpm -F @pro-components/utils build",
+    "dev:play": "pnpm -C play dev",
+    "dev:docs": "pnpm -C @pro-components/docs run dev",
+    "build:docs": "pnpm -C @pro-components/docs run build",
+    "preview:docs": "pnpm -C @pro-components/docs run preview",
     "clean": "pnpm -r clean",
     "type-check": "pnpm -r type-check",
     "lint": "eslint",
@@ -36,6 +34,7 @@
   },
   "dependencies": {
     "@pro-components/components": "workspace:*",
+    "@pro-components/theme-chalk": "workspace:*",
     "@pro-components/utils": "workspace:*"
   },
   "devDependencies": {

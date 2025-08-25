@@ -29,6 +29,9 @@ importers:
       '@pro-components/components':
         specifier: workspace:*
         version: link:packages/components
+      '@pro-components/theme-chalk':
+        specifier: workspace:*
+        version: link:packages/theme-chalk
       '@pro-components/utils':
         specifier: workspace:*
         version: link:packages/utils
@@ -84,6 +87,8 @@ importers:
         version: 1.6.4(@algolia/client-search@5.35.0)(@types/node@24.3.0)(async-validator@4.2.5)(change-case@5.4.4)(fuse.js@7.1.0)(jwt-decode@4.0.0)(postcss@8.5.6)(search-insights@2.17.3)(terser@5.43.1)(typescript@5.9.2)
 
   packages/components: {}
+
+  packages/theme-chalk: {}
 
   packages/utils: {}
 

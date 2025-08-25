@@ -1,6 +1,7 @@
 packages:
   - packages/*
   - docs
+  - play,
 
 catalog:
   '@vue/shared': ~3.2.37
