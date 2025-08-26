@@ -4,6 +4,12 @@ Form 是一个基础的表单组件，提供了完整的表单功能。
 
 ## 基础用法
 
+:::preview
+
+demo-preview=./examples/BasicForm.vue
+
+:::
+
 ```vue
 <script setup>
 import { Form } from '@pro-components/components'

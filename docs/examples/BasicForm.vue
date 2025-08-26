@@ -208,6 +208,8 @@ function handleDialogFinish(values: Record<string, any>) {
   <div class="basic-form-example">
     <h2>基础表单示例</h2>
 
+    <MyButton />
+
     <!-- 基础表单 -->
     <BaseForm />
     <!-- <BaseForm
