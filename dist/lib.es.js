@@ -1,28 +1,31 @@
-import { defineComponent as o, createElementBlock as l, openBlock as u, createElementVNode as r } from "vue";
+import { defineComponent as r, createElementBlock as s, openBlock as u, createElementVNode as i } from "vue";
 function a(n) {
-  return n.install = function(t) {
-    t.component(n.name, n);
+  return n.install = function(e) {
+    e.component(n.name, n);
   }, n;
 }
-const s = /* @__PURE__ */ o({
+const c = /* @__PURE__ */ r({
   name: "MyButton",
   __name: "button",
   setup(n) {
-    return (t, e) => (u(), l("div", null, [...e[0] || (e[0] = [
-      r("button", null, "阿牛", -1)
+    return (e, t) => (u(), s("div", null, [...t[0] || (t[0] = [
+      i("button", null, "阿牛", -1)
     ])]));
   }
-}), c = a(s), i = [
-  c
-];
-function f(n) {
-  i.forEach((t) => {
-    n._context.components[t.name] || n.component(t.name, t);
-  });
+}), m = a(c), f = [
+  m
+], _ = "0.0.0-dev.1", o = Symbol("INSTALLED_KEY");
+function E(n = []) {
+  return {
+    version: _,
+    install: (t) => {
+      t[o] || (t[o] = !0, n.forEach((l) => t.use(l)));
+    }
+  };
 }
+const B = E([...f]);
 export {
-  c as MyButton,
-  f as default,
-  f as install,
+  m as MyButton,
+  B as default,
   a as withInstall
 };
